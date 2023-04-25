@@ -17,22 +17,12 @@ const TodoList = () => {
     const [id, setId] = useState();
     const [toggle, setToggle] = useState(false);
 
-    const storeData = async (value) => {
-        try {
-            await AsyncStorage.setItem('todos', JSON.stringify(value))
-        } catch (e) {
-            console.log(e);
-        }
-    }
-
     const getData = async () => {
         try {
-            const value = await AsyncStorage.getItem('todos');
-            if (value !== null) {
-                setTodos(JSON.parse(value))
-            }
+            let newList = JSON.parse(await AsyncStorage.getItem('todos'))
+            setTodos(newList);
         } catch (e) {
-            console.log(e);
+            console.log(e)
         }
     }
 
@@ -40,7 +30,7 @@ const TodoList = () => {
         getData();
     }, [])
 
-    const handleAddTodo = () => {
+    const handleAddTodo = async () => {
         let newArray = [...todos];
         const isValidEmail = validateEmail(email);
         const isvalidname = validateName(input);
@@ -48,7 +38,7 @@ const TodoList = () => {
         setIsValidEmail(isValidEmail);
         setIsValidName(isvalidname);
         setIsValidNumber(isvalidnumber);
-        console.log("data====", email, input, isValidEmail, isvalidname, isvalidnumber);
+
         if (input.length === 0) {
             setToggle(true);
         }
@@ -60,6 +50,12 @@ const TodoList = () => {
                 setEmail('');
                 setPhNumber('');
                 setToggle(false);
+
+                try {
+                    await AsyncStorage.setItem('todos', JSON.stringify([...todos, newArray]));
+                } catch (e) {
+                    console.log(e);
+                }
             }
             else {
 
@@ -83,6 +79,7 @@ const TodoList = () => {
                 Alert.alert(AppConstant.Please_enter_correct_field);
             }
         }
+        await AsyncStorage.setItem("todos", JSON.stringify(newArray))
     };
 
     const emailExpression = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -105,7 +102,6 @@ const TodoList = () => {
         let newArray = [...todos];
         newArray.splice(id, 1)
         setTodos(newArray);
-
     };
 
     const handleEditTodo = (names, email, number, index) => {
