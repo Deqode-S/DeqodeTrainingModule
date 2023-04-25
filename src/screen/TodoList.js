@@ -2,8 +2,8 @@ import React, { useState, useEffect, Component } from 'react';
 import { View, Text, TextInput, FlatList, TouchableOpacity, Button, Modal, Alert } from 'react-native';
 import { commonStyle } from '../style/CommonStyle/Styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { SwipeListView } from 'react-native-swipe-list-view';
 import Textinput from '../component/common/TextInputComponent';
+import { AppConstant } from '../AppConstant/Constant';
 
 const TodoList = () => {
     const [todos, setTodos] = useState([]);
@@ -63,7 +63,7 @@ const TodoList = () => {
             }
             else {
 
-                Alert.alert('Please enter correct field');
+                Alert.alert(AppConstant.Please_enter_correct_field);
             }
         } else {
             if (input && email && phnumber && isEdit && isValidEmail && isvalidname && isvalidnumber) {
@@ -80,7 +80,7 @@ const TodoList = () => {
                 setToggle(false);
                 setIsEdit("Add");
             } else {
-                Alert.alert('Please enter all valid field');
+                Alert.alert(AppConstant.Please_enter_correct_field);
             }
         }
     };
@@ -123,16 +123,15 @@ const TodoList = () => {
             <View>
                 <Textinput
                     value={input}
-                    placeholder={'Name'}
+                    placeholder={AppConstant.name}
                     onChangeText={(text) => setInput(text)}
                 />
-                {console.log("input===", isvalidname)}
                 {toggle && <Text style={{ color: 'red', marginLeft: 12, }}>Please enter a valid name</Text>}
             </View>
             <View>
                 <Textinput
                     value={email}
-                    placeholder={'Email'}
+                    placeholder={AppConstant.email}
                     onChangeText={(text) => setEmail(text)}
                 />
                 {!isValidEmail && <Text style={{ color: 'red', marginLeft: 12, }}>Please enter a valid email address</Text>}
@@ -140,7 +139,7 @@ const TodoList = () => {
             <View>
                 <Textinput
                     value={phnumber}
-                    placeholder={'Mobile No'}
+                    placeholder={AppConstant.Mobile_No}
                     onChangeText={(text) => setPhNumber(text)}
                     keyboardType={"numeric"}
                 />
@@ -158,20 +157,20 @@ const TodoList = () => {
                 renderItem={(data) => (
                     <View style={commonStyle.renderContainer}>
                         <View style={[commonStyle.textRender]}>
-                            <Text>Name : {data.item.name}</Text>
-                            <Text>Email : {data.item.email}</Text>
-                            <Text>Mobile No. :{data.item.number}</Text>
+                            <Text>{AppConstant.name} : {data.item.name}</Text>
+                            <Text>{AppConstant.email} : {data.item.email}</Text>
+                            <Text>{AppConstant.Mobile_No} :{data.item.number}</Text>
                         </View>
                         <View style={[commonStyle.buttonStyle]}>
                             <TouchableOpacity onPress={() => handleEditTodo(data.item.name, data.item.email, data.item.number, data.index)}
                                 style={[commonStyle.editButton]}
                             >
-                                <Text style={{ color: 'white', }}>Edit</Text>
+                                <Text style={[commonStyle.buttonText]}>Edit</Text>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={() => handleRemoveTodo(data.index)}
                                 style={[commonStyle.deleteButton]}
                             >
-                                <Text style={{ color: 'white', }}>Delete</Text>
+                                <Text style={[commonStyle.buttonText]}>Delete</Text>
                             </TouchableOpacity>
                         </View>
                     </View>

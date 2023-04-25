@@ -154,4 +154,7 @@ export const commonStyle = StyleSheet.create({
         alignSelf: 'center',
         textAlign: 'center',
     },
+    buttonText : {
+        color: 'white',
+    }
 })
