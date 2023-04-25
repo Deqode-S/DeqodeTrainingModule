@@ -1,12 +1,27 @@
 import React from "react";
 import { Text, View } from "react-native";
 import { commonStyle } from "../../style/CommonStyle/Styles";
+import TextComponent from "./TextComponent";
+import ImageComponent from "./ImageComponent";
 
-const HeaderComponent = () => {
- 
-    return(
+const HeaderComponent = ({ home }) => {
+
+    return (
         <View style={[commonStyle.mainContainer]}>
-            <Text>Header</Text>
+            {
+                home ?
+                    // <TextComponent
+                    //     text={"HeaderText"}
+                    // /> :
+
+                    <ImageComponent
+                        source={require("../../assests/icon/logo.png")}
+                    /> :
+                    <TextComponent
+                        text={"Sakshi"}
+                    />
+            }
+
         </View>
     )
 
