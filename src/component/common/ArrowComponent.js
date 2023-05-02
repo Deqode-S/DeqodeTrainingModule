@@ -6,13 +6,13 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 
-const SearchComp = ({source}) => {
+const ArrowComponent = ({source}) => {
 
     return(
        <Image
-       style={[commonStyle.imageContainer2]}
+       style={[commonStyle.imageContainer3]}
        source={source}
        />
     )
 }
-export default SearchComp;
+export default ArrowComponent;

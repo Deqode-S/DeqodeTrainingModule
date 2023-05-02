@@ -8,6 +8,9 @@ export const commonStyle = StyleSheet.create({
         height: 50,
         width: "100%",
         backgroundColor: "white",
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingHorizontal: 10,
     },
     container: {
         padding: 10,
@@ -19,9 +22,21 @@ export const commonStyle = StyleSheet.create({
         marginTop: 10,
     },
     imageContainer: {
-        height: 30,
+        height: 35,
         width: windowWidth * 0.3,
-        alignSelf: 'auto',
+        marginLeft: 10,
+    },
+    imageContainer2: {
+        height: 20,
+        width: 20,
+        marginRight: 10,
+        marginTop: 10,
+    },
+    imageContainer3: {
+        height: 20,
+        width: 20,
+        marginLeft: 10,
+        marginTop: 10,
     },
     todoList: {
         fontSize: 20,
@@ -57,7 +72,7 @@ export const commonStyle = StyleSheet.create({
         fontWeight: 'bold',
         right: 5,
         color: 'white',
-        
+
     },
     plusStyle1: {
         fontSize: 20,
@@ -126,35 +141,76 @@ export const commonStyle = StyleSheet.create({
         justifyContent: 'space-between',
         padding: 15,
     },
-    editButton : {
-        backgroundColor: 'green', 
-        height: 35, 
-        width: 100, 
-        justifyContent: 'center', 
+    editButton: {
+        backgroundColor: 'green',
+        height: 35,
+        width: 100,
+        justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 30 
+        borderRadius: 30
     },
-    deleteButton :{
-        backgroundColor: 'red', 
-        height: 35, 
-        width: 100, 
-        justifyContent: 'center', 
-        alignItems: 'center' ,
+    deleteButton: {
+        backgroundColor: 'red',
+        height: 35,
+        width: 100,
+        justifyContent: 'center',
+        alignItems: 'center',
         borderRadius: 30,
     },
-    textRender :{
+    textRender: {
         justifyContent: 'space-between',
     },
-    buttonStyle : {
-       justifyContent: 'space-between',
+    buttonStyle: {
+        justifyContent: 'space-between',
     },
-    TextInputStyle : {
+    TextInputStyle: {
         justifyContent: 'center',
         alignItems: 'center',
         alignSelf: 'center',
         textAlign: 'center',
     },
-    buttonText : {
+    buttonText: {
         color: 'white',
-    }
+    },
+    splashImage: {
+        width: '100%',
+        height: '100%',
+    },
+    splashLogo: {
+        marginVertical: 400,
+        marginLeft: 140,
+    },
+    CategoryContainer: {
+        width: windowWidth / 4,
+        alignItems: 'center',
+        //justifyContent:'space-between'
+    },
+    CategoryImage: {
+        height: 70,
+        width: 70,
+        borderRadius: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#A1A0CB',
+    },
+    categoryText: {
+        fontSize: 11,
+        marginTop: 3,
+        fontWeight: "600",
+    },
+    flashBar: {
+        backgroundColor: 'rgba(36, 59, 151, 0.45)',
+        height: 15,
+        width: 110,
+        borderRadius: 10,
+        top: 5,
+    },
+    flashBar1: {
+        backgroundColor: 'red',
+        height: 15,
+        width: 80,
+        borderRadius: 10,
+        marginRight: 25,
+    },
+
 })
