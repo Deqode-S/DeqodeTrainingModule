@@ -102,6 +102,8 @@ const TodoList = () => {
         let newArray = [...todos];
         newArray.splice(id, 1)
         setTodos(newArray);
+
+
     };
 
     const handleEditTodo = (names, email, number, index) => {
