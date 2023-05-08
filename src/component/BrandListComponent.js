@@ -1,0 +1,35 @@
+import React from "react";
+import { View, Text, Dimensions } from 'react-native';
+import CategoryComponent from "./homeComponent/CategoryComponent";
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
+class BrandLists extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+    render() {
+        return (
+            <View>
+                <CategoryComponent
+                    source={this.props.source}
+                    //categoryText={this.props.categoryText}
+                    PopularContainer={{ height: 70, width: 70, margin: 5, backgroundColor: '#F1F1F1', borderRadius: 10 }}
+                    PopularImage={{ height: 70, width: 70, backgroundColor: '#D9D9D9', borderRadius: 10 }}
+                    ImageContainer={{ height: 70, width: 70, borderRadius: 10, }}
+                    //PopularText={{ marginTop: 10, color: '#505050', alignSelf: 'flex-start', left: 5, fontSize: 14 }}
+                    // flashSaleFlag1={this.props.flashSaleFlag1}
+                    // ratingBar={this.props.ratingBar}
+                    // ratingStyle={{ height: 50, width: "100%", justifyContent: 'space-evenly' }}
+                    // brandPrice={this.props.brandPrice}
+                    // discountPrice={this.props.discountPrice}
+                   // brandType={this.props.brandType}
+                    BrandList={this.props.BrandList}
+                />
+
+            </View>
+        )
+    }
+}
+
+export default BrandLists;
