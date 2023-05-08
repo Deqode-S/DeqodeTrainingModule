@@ -6,7 +6,11 @@ const windowHeight = Dimensions.get('window').height;
 
 
 class PopularProduct extends React.Component {
+    constructor(props) {
+        super(props)
+    }
     render() {
+        { console.log("item===", this.props.source.uri) }
         return (
             <View>
                 <CategoryComponent
@@ -16,7 +20,7 @@ class PopularProduct extends React.Component {
                     PopularImage={{ height: 80, width: 80, backgroundColor: '#D9D9D9', borderRadius: 10 }}
                     ImageContainer={{ height: 80, width: 80, borderRadius: 10, }}
                     PopularText={{ marginTop: 10, }}
-
+                    onPress={this.props.onPress}
                 />
             </View>
         )

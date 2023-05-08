@@ -3,7 +3,7 @@ import { View, Text, TextInput, FlatList, TouchableOpacity, Button, Modal, Alert
 import { commonStyle } from '../style/CommonStyle/Styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Textinput from '../component/common/TextInputComponent';
-import { AppConstant } from '../AppConstant/Constant';
+import { AppConstant } from '../appConstant/Constant';
 
 const TodoList = () => {
     const [todos, setTodos] = useState([]);

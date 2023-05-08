@@ -11,6 +11,7 @@ export const commonStyle = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingHorizontal: 10,
+        alignItems: 'center'
     },
     container: {
         padding: 10,
@@ -25,6 +26,15 @@ export const commonStyle = StyleSheet.create({
         height: 35,
         width: windowWidth * 0.3,
         marginLeft: 10,
+    },
+    ImageContainer: {
+        height: 55, width: 55, borderRadius: 35, 
+    },
+    TextProduct: {
+        fontSize: 16, margin: 10, fontWeight: '400', top: 10, color: '#505050' 
+    },
+    TextProduct1: {
+        fontSize: 30, fontWeight: '600', alignSelf: 'center', color: '#505050'
     },
     imageContainer2: {
         height: 20,
@@ -66,13 +76,17 @@ export const commonStyle = StyleSheet.create({
         backgroundColor: 'black',
     },
     plusStyle: {
-        fontSize: 20,
+        fontSize: 15,
         textAlign: 'center',
-        //marginTop: 10,
-        fontWeight: 'bold',
-        right: 5,
+        top: 10,
+        fontWeight: 600,
+        backgroundColor:'#000000',
         color: 'white',
-
+        padding: 10,
+        marginRight:10,
+        height:40,
+        width: 125,
+        borderRadius: 10
     },
     plusStyle1: {
         fontSize: 20,
@@ -183,6 +197,7 @@ export const commonStyle = StyleSheet.create({
     CategoryContainer: {
         width: windowWidth / 4,
         alignItems: 'center',
+        marginTop:10,
         //justifyContent:'space-between'
     },
     CategoryImage: {

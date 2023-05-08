@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, ImageBackground, Dimensions, TextInput } from 'react-native';
+import { View, Text, Image, ImageBackground, Dimensions, TouchableOpacity } from 'react-native';
 import { commonStyle } from "../../style/CommonStyle/Styles";
 import { Rating } from "react-native-ratings";
 const windowWidth = Dimensions.get('window').width;
@@ -12,15 +12,16 @@ class CategoryComponent extends React.Component {
 
 
     render() {
-        const starImage = require('../../assests/icon/Star.png')
         return (
             <View style={[commonStyle.CategoryContainer, this.props.PopularContainer]}>
-                <View style={[commonStyle.CategoryImage, this.props.PopularImage]}>
-                    <Image
-                        source={this.props.source}
-                        style={this.props.ImageContainer}
-                    />
-                </View>
+                <TouchableOpacity onPress={this.props.onPress}>
+                    <View style={[commonStyle.CategoryImage, this.props.PopularImage]}>
+                        <Image
+                            source={this.props.source}
+                            style={this.props.ImageContainer}
+                        />
+                    </View>
+                </TouchableOpacity>
 
                 {
                     this.props.flashBar && this.props.flashBar1 &&
@@ -48,8 +49,8 @@ class CategoryComponent extends React.Component {
                         this.props.flashSaleFlag1 &&
                         (
                             <View style={{ flexDirection: 'row', width: "100%", justifyContent: 'space-between', paddingHorizontal: 10 }}>
-                                <Text style={{ color: 'red' }}>$ 8625</Text>
-                                <Text style={{ textDecorationLine: 'line-through' }}>$ 8625</Text>
+                                <Text style={{ color: 'red' }}>{this.props.brandPrice}</Text>
+                                <Text style={{ textDecorationLine: 'line-through' }}>{this.props.discountPrice}</Text>
                             </View>
                         )
                     }
@@ -58,10 +59,8 @@ class CategoryComponent extends React.Component {
                         (
                             <View style={{ width: '100%' }}>
                                 <Rating
-                                    ratingImage={starImage}
                                     imageSize={15}
                                     style={{ alignSelf: 'flex-start', left: 10 }}
-
                                 />
                             </View>
                         )

@@ -1,42 +1,50 @@
 import React from "react";
-import { View, Text, ScrollView, FlatList, } from 'react-native';
+import { View, Text, FlatList } from 'react-native';
 import CategoryComponent from "../component/homeComponent/CategoryComponent";
 import PopularProduct from "../component/homeComponent/PopularProductComponent";
 import FlashSale from "../component/homeComponent/FlashSaleComponent";
 import ProductListing from "../component/homeComponent/ProductListingComponent";
 import { flashSale, popularComponentArray, popularProducts, productList } from "../json/HomeJson";
+import HeaderComponent from "../component/common/CustomHeader";
+import { commonStyle } from "../style/CommonStyle/Styles";
+import { AppConstant } from "../appConstant/Constant";
 
 class HomeScreen extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+
     ListHeaderComponent = () => {
         return (
             <>
                 <FlatList
-                    //ListHeaderComponent={ListHeaderComponent}
                     data={popularComponentArray}
                     keyExtractor={(item) => item.id}
                     renderItem={({ item }) => {
                         return (
-                            <CategoryComponent
-                                source={{ uri: item.uri }}
-                                categoryText={item.name}
-                                ImageContainer={{ height: 55, width: 55, borderRadius: 35, }}
-
-                            />
+                            <>
+                                <CategoryComponent
+                                    source={{ uri: item.uri }}
+                                    categoryText={item.name}
+                                    ImageContainer={[commonStyle.ImageContainer]}
+                                    onPress={() => this.props.navigation.navigate('productlistingpage', {
+                                        brand: item.brand, name: item.name, brandType: item.brandType
+                                    })}
+                                />
+                            </>
                         )
                     }}
                     numColumns={4}
-                // horizontal={true}
-
                 />
-                <Text style={{ fontSize: 16, margin: 10, fontWeight: '400', top: 10, color: '#505050' }}>Popular Products</Text>
+                <Text style={[commonStyle.TextProduct]}>{AppConstant.Popular_Products}</Text>
             </>
-
         )
     }
+
     flashSaleComponent = () => {
         return (
             <View>
-                <Text style={{ fontSize: 30, fontWeight: '400', alignSelf: 'center', color: '#505050' }}>Just for You !</Text>
+                <Text style={[commonStyle.TextProduct1]}>Just for You !</Text>
                 <FlatList
                     data={productList}
                     keyExtractor={(item) => item.id}
@@ -49,10 +57,11 @@ class HomeScreen extends React.Component {
                                     categoryText={item.ListName}
                                     flashSaleFlag1
                                     ratingBar
+                                    brandPrice={item.brandPrice}
+                                    discountPrice={item.discountPrice}
                                 />
                             </>
                         )
-
                     }}
                     numColumns={2}
                 />
@@ -63,7 +72,7 @@ class HomeScreen extends React.Component {
     ListFooterComponent = () => {
         return (
             <>
-                <Text style={{ fontSize: 16, margin: 10, fontWeight: '400', top: 10, color: '#505050' }}>Flash Sale</Text>
+                <Text style={[commonStyle.TextProduct]}>Flash Sale</Text>
                 <FlatList
                     data={flashSale}
                     keyExtractor={(item) => item.id}
@@ -91,7 +100,10 @@ class HomeScreen extends React.Component {
 
     render() {
         return (
-            <View style={{ flex: 1, }}>
+            <View>
+                <HeaderComponent
+                    home={true}
+                />
                 <FlatList
                     ListHeaderComponent={this.ListHeaderComponent}
                     ListFooterComponent={this.ListFooterComponent}
@@ -99,22 +111,18 @@ class HomeScreen extends React.Component {
                     keyExtractor={(item) => item.id}
                     renderItem={({ item }) => {
                         return (
-
                             <>
                                 <PopularProduct
                                     source={{ uri: item.uri }}
                                     categoryText={item.popularName}
+                                    onPress={() => this.props.navigation.navigate('Pdp', { item: item })}
                                 />
                             </>
                         )
                     }}
                     numColumns={4}
-                //horizontal={true}
                 />
-
             </View>
-
-
         )
     }
 }

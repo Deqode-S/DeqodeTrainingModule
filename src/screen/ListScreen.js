@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Text, View, TextInput, Button, TouchableOpacity, FlatList, } from "react-native";
 import { commonStyle } from "../style/CommonStyle/Styles";
+import HeaderComponent from "../component/common/CustomHeader";
 
-const TodoList = () => {
+const TodoList = ({ navigation }) => {
     const [todo, setTodo] = useState([]);
     const [newTodo, setNewTodo] = useState('');
 
@@ -37,6 +38,10 @@ const TodoList = () => {
     return (
 
         <View>
+            <HeaderComponent
+                home={false}
+                onPress={() => navigation.pop()}
+            />
             <Text style={[commonStyle.todoList]}>Your TodoList</Text>
             <View style={{ display: 'flex', flexDirection: "row", justifyContent: "space-around" }}>
                 <TextInput
