@@ -1,5 +1,5 @@
-import React from "react";
-import { FlatList, Text, TouchableOpacity, View } from "react-native";
+import React, { useState } from "react";
+import { FlatList, Text, TouchableHighlight, TouchableOpacity, View } from "react-native";
 import HeaderComponent from "../component/common/CustomHeader";
 import { Pdp, PdpColor, PdpSize, productList } from "../json/HomeJson";
 import ProductDescriptionComponent from "../component/common/ProductDescriptionComponent";
@@ -7,14 +7,22 @@ import { commonStyle } from "../style/CommonStyle/Styles";
 import ProductListing from "../component/homeComponent/ProductListingComponent";
 import { AppConstant } from "../appConstant/Constant";
 import ButtonComponent from "../component/ButtonComponent";
+import TextComponent from "../component/common/TextComponent";
 
-const ProductDescription = ({ navigation, route }) => {
-    //console.log("routew===", route.params.item)
+
+const ProductDescription = ({ navigation, route, onAddToCart }) => {
+    const [isSelect, setIsSelect] = useState();
+
+    const selectButton = () => {
+        setIsSelect(isSelect)
+    }
+
     const ListHeaderComponent = () => {
-        return (<>
-            <Text style={[commonStyle.TextProduct1]}>Jas Oversized</Text>
+        return (
+        <>
+            <Text style={[commonStyle?.TextProduct1]}>{route?.params?.item?.popularName}</Text>
             <ProductDescriptionComponent
-                source={route.params.item}
+                source={route?.params?.item}
             />
             <Text style={{ fontSize: 20, margin: 10, color: '#505050', fontWeight: 600 }}>Select Size</Text>
             <FlatList
@@ -22,9 +30,11 @@ const ProductDescription = ({ navigation, route }) => {
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => {
                     return (
-                        <View style={{ height: 35, width: 35, justifyContent: 'center', alignItems: 'center', backgroundColor: '#D9D9D9', margin: 5, marginLeft: 15, borderRadius: 5 }}>
-                            <Text>{item}</Text>
-                        </View>
+                        <TouchableOpacity onPress={() => selectButton()}>
+                           <View style={{ height: 35, width: 35, justifyContent: 'center', alignItems: 'center', backgroundColor: '#D9D9D9', margin: 5, marginLeft: 15, borderRadius: 5 }}>
+                              <Text>{item}</Text> 
+                           </View>
+                        </TouchableOpacity>
                     )
                 }}
                 horizontal={true}
@@ -36,7 +46,10 @@ const ProductDescription = ({ navigation, route }) => {
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => {
                     return (
-                        <View style={{ height: 35, width: 35, justifyContent: 'center', alignItems: 'center', backgroundColor: item, margin: 5, marginLeft: 15, borderRadius: 5 }}>
+                        <View>
+                          <TouchableOpacity>                            
+                            <View style={{ height: 35, width: 35, justifyContent: 'center', alignItems: 'center', backgroundColor: item, margin: 5, marginLeft: 15, borderRadius: 5 }}></View>
+                        </TouchableOpacity>
                         </View>
                     )
                 }}
@@ -79,10 +92,11 @@ const ProductDescription = ({ navigation, route }) => {
             />
             <View style={{ height: 60, width: '100%',flexDirection:'row', justifyContent:'space-between', backgroundColor:'white'}}>
                 <Text style={{top: 15, fontSize: 25, color:'red', marginLeft:10}}>$200</Text>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => {
+                    onAddToCart(item)
+                }}>
                     <Text style={[commonStyle.plusStyle]}>Add to Cart</Text>
                 </TouchableOpacity>
-                {/* <ButtonComponent/> */}
             </View>
         </>
     )

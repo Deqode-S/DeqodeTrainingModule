@@ -5,6 +5,8 @@ import Splashscreen from "./src/screen/SplashScreen";
 import HomeScreen from "./src/screen/HomeScreen";
 import StackNavigations from './src/navigation /StackNavigations'
 import TabNavigations from "./src/navigation /TabNavigations";
+import MainContainer from "./src/ManContainer";
+import LoginScreen from "./src/screen/LoginScreen";
 //import { connect } from 'react-redux';
 
 
@@ -26,6 +28,8 @@ const App = () => {
          <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
             {/* <StackNavigations/> */}
             <TabNavigations />
+            {/* <LoginScreen /> */}
+            {/* <MainContainer/> */}
          </SafeAreaView>
       </>
    )

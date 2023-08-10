@@ -9,6 +9,9 @@ import TodoList from "../screen/ListScreen";
 import StackNavigations from "./StackNavigations";
 import productListing from "../screen/ProductListing";
 import { Image } from "react-native";
+import WishlistScreen from "../screen/WishlistScreen";
+import CartScreen from "../screen/CartScreen";
+import LoginScreen from "../screen/LoginScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -35,7 +38,7 @@ const TabNavigations = () => {
                 />
                 <Tab.Screen
                     name="Cart"
-                    component={StackNavigations}
+                    component={CartScreen}
                     options={{
                         tabBarIcon: () => (
                             <Image
@@ -59,7 +62,7 @@ const TabNavigations = () => {
                 />
                 <Tab.Screen
                     name="Wishlist"
-                    component={StackNavigations}
+                    component={WishlistScreen}
                     options={{
                         tabBarIcon: () => (
                             <Image
@@ -71,7 +74,7 @@ const TabNavigations = () => {
                 />
                 <Tab.Screen
                     name="Account"
-                    component={StackNavigations}
+                    component={LoginScreen}
                     options={{
                         tabBarIcon: () => (
                             <Image

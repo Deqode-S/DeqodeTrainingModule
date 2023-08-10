@@ -5,6 +5,7 @@ const TextComponent = ({ text }) => {
 
     return (
         <Text>{text}</Text>
+        
     )
 
 }

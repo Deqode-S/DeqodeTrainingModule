@@ -6,8 +6,10 @@ import ImageComponent from "./ImageComponent";
 import SearchComp from "./SearchComponent";
 import ArrowComponent from "./ArrowComponent";
 import HeaderDropdown from "./HeaderDropdown";
+import HeartComponent from "./HeartComponent";
+import WishlistScreen from "../../screen/WishlistScreen";
 
-const HeaderComponent = ({ home, onPress, textHeader, headerName, dropDown, toggleModal,toggleModal1,toggleModal2, toggle, istoggle, istoggle1}) => {
+const HeaderComponent = ({ home,  ProductDescription, onPress, textHeader, headerName, dropDown, toggleModal,toggleModal1,toggleModal2, toggle, istoggle, istoggle1, navigation,}) => {
 
     return (
         <View style={{ backgroundColor: '#fff' }}>
@@ -21,17 +23,26 @@ const HeaderComponent = ({ home, onPress, textHeader, headerName, dropDown, togg
                         <ArrowComponent
                             source={require("../../assests/icon/arrow.png")}
                             onPress={onPress}
-                        />
+                        /> 
                 }
+               
                 {
                     textHeader && <TextComponent
                         text={headerName}
                     />
                 }
+                {
+                     ProductDescription ? 
+                    <SearchComp
+                       source={require("../../assests/icon/clip.png")}
+                    /> :
+                    <HeartComponent
+                       source={require('../../assests/icon/wishlist.png')}
+                       //onPress={() => navigation.navigate('wishlistScreen')}
+                    /> 
+                }
+                
 
-                <SearchComp
-                    source={require("../../assests/icon/clip.png")}
-                />
             </View>
             {
                 dropDown && <HeaderDropdown
