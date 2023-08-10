@@ -103,6 +103,7 @@ class HomeScreen extends React.Component {
             <View>
                 <HeaderComponent
                     home={true}
+                    ProductDescription={true}
                 />
                 <FlatList
                     ListHeaderComponent={this.ListHeaderComponent}

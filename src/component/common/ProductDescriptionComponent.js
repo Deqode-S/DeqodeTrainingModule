@@ -10,15 +10,14 @@ class ProductDescriptionComponent extends React.Component {
     }
     render() {
         return (
-            <View>
+            <View> 
                 <CategoryComponent
                     source={this.props.source}
                     categoryText={this.props.categoryText}
-                    PopularContainer={{ height: 400, width: windowWidth / 1.1, backgroundColor: 'red', alignSelf: 'center', borderRadius: 20, }}
+                    PopularContainer={{ height: 400, width: windowWidth / 1.1, alignSelf: 'center', borderRadius: 20, }}
                     PopularImage={{ height: 400, width: windowWidth / 1.1, backgroundColor: '#D9D9D9', alignSelf: 'center', borderRadius: 20, }}
                     ImageContainer={{ height: 400, width: windowWidth / 1.1, borderRadius: 20, }}
                 />
-
             </View>
         )
     }

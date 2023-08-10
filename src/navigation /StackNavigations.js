@@ -6,6 +6,8 @@ import TodoList from "../screen/ListScreen";
 import TabNavigations from "./TabNavigations";
 import productListing from "../screen/ProductListing";
 import ProductDescription from "../screen/ProductDetailPage";
+import LoginScreen from "../screen/LoginScreen";
+import RegisterScreen from "../screen/RegisterScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -30,7 +32,14 @@ const StackNavigations = () => {
                 name="Pdp"
                 component={ProductDescription}
             />
-
+            <Stack.Screen 
+                name="Login"
+                component={LoginScreen}
+            />
+             <Stack.Screen 
+                name="Register"
+                component={RegisterScreen}
+            />
         </Stack.Navigator >
     )
 }

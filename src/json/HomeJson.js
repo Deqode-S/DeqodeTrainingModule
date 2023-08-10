@@ -381,37 +381,37 @@ export const popularProducts = [
     },
     {
         popularName: "Jas Oversized",
-        uri: 'https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg',
+        uri: 'https://rukminim1.flixcart.com/image/612/612/l2hwwi80/t-shirt/t/s/d/s-203026401-only-original-imagdtwfnnfpac47.jpeg?q=70',
         price:'$200'
     },
     {
         popularName: "Jas Oversized",
-        uri: 'https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg',
+        uri: 'https://rukminim1.flixcart.com/image/612/612/xif0q/t-shirt/9/b/u/xs-epbtrhrt-earthstick-original-imagnea5ttpnh5xg.jpeg?q=70',
         price:'$200'
     },
     {
         popularName: "Yellow Blazer",
-        uri: 'https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg',
+        uri: 'https://rukminim1.flixcart.com/image/832/832/xif0q/blazer/f/i/m/m-kslblzr5503-kassually-original-imafxnnfnxtrdwup-bb.jpeg?q=70',
         price:'$200'
     },
     {
         popularName: "Jas Oversized",
-        uri: 'https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg',
+        uri: 'https://www.jiomart.com/images/product/500x630/rvt36kiztj/leotude-cotton-blend-half-sleeve-oversized-t-shirts-for-women-s-product-images-rvt36kiztj-0-202303310337.jpg',
         price:'$200'
     },
     {
         popularName: "Jas Oversized",
-        uri: 'https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg',
+        uri: 'https://rukminim1.flixcart.com/image/612/612/xif0q/t-shirt/9/q/y/s-po3-grl-fs49-groovy-blk-wild-red-battle-leotude-original-imagfqu6zafgywgh.jpeg?q=70',
         price:'$200'
     },
     {
         popularName: "Jas Oversized",
-        uri: 'https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg',
+        uri: 'https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/b/9/tr:w-270,/b917bcaTSSPA-211271_4.jpg?rnd=20200526195200',
         price:'$200'
     },
     {
         popularName: "Yellow Blazer",
-        uri: 'https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg',
+        uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9AWsJBYbYfeiSsf3Bdr6ej9cjBpdve4LZpVZbg9pEdpv7b-9gIwTov9TM9o3rd1AlYzI&usqp=CAU',
         price:'$200'
     },
 

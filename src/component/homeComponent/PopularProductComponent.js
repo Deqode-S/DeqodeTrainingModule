@@ -10,7 +10,6 @@ class PopularProduct extends React.Component {
         super(props)
     }
     render() {
-        { console.log("item===", this.props.source.uri) }
         return (
             <View>
                 <CategoryComponent
